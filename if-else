@@ -1,2 +1,39 @@
-#if statement
+                       ### if statement ###
+                       
+                       
+Basic :
+# if statement compare variable and print true  value
 
+# strcmp comapre variable ( Assembly )
+
+# After Analizing  target file with proper tools like radare-2 ,gidhra ,ida or hovar  you  will find important information about your
+  target file .
+# Need  breakpoint for strcmp using db  command in  r2 
+
+# command :
+              db  breakpoint Address 
+              example :
+                       db 0x560b818007c7
+Note : Breakpont address must be address of strcmp 
+
+# Then , Execution breakpoint address using dc command
+
+# then , read  breakpoint  data  using  px command with  register name 
+         Command: 
+                  px @rsi
+                            here , rsi  is register name for  breakpoint
+                            
+
+
+------------------------Example ------------------------------------------
+
+Command For r2:
+             
+               r2 -d targetfile
+               aaa
+               afl
+               pdf @main
+               db 0x560b818007c7
+               dc
+               px @rsi
+File Source : Reverse Engineering Room in Try Hack Me  , File name crackme1.bin        
